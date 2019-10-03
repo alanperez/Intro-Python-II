@@ -7,7 +7,5 @@ class Player:
         self.name = name
         self.currentRoom = currentRoom
 
-
-# p1 = Player("Alan", "Entrance")
-
-# print(f'Name: {p1.name}, Current Room: {p1.currentRoom}')
+    def move(self, direction):
+        self.direction = direction

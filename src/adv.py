@@ -50,18 +50,25 @@ room['treasure'].s_to = room['narrow']
 #
 # If the user enters "q", quit the game.
 
-noob = Player("Alan", room["outside"])
-print(noob.currentRoom.description)
+player = Player("Alan", room["outside"])
+print(player.currentRoom).__str__()
 while True:
-    print(noob.currentRoom)
-playerInput = input("where do you want to go? ( keys: n,e,s,w)")
+    # print(player.currentRoom.description).__str__()
+    # print(player.currentRoom).__str__()
+    # print(player.currentRoom).__str__()
+    playerInput = input("where do you want to go? ( keys: n,e,s,w)").split(' ')
 
-keys = ['n', 'e', 's', 'w', 'q']
+    keys = ('n', 'e', 's', 'w', 'q')
 
-if playerInput in keys:
-    noob.move(playerInput)
-if playerInput == 'q':
-    print("Exiting...")
-    exit()
-else:
-    print("enter a valid command")
+    # if playerInput[0] == 'q':
+    #     print("Exiting..")
+    #     exit()
+    # elif playerInput[0] in keys:
+    #     player.move(playerInput[0])
+    # else:
+    #     print("enter a valid command")
+    if playerInput in keys:
+        player.move(playerInput[0])
+    elif playerInput[0] == 'q':
+        print("Exiting..")
+        exit()
